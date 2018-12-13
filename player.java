@@ -14,14 +14,19 @@ public class player {
     private int bodypoint; 
     private boolean sword; 
     private int damage; 
+    private final String name; 
     
-    
-    public player(){
+    public player(String name){
 
     bodypoint = 10; 
     sword = false; 
     damage = 1; 
+    this.name = name; 
     
+    }
+    
+    public String getName(){
+        return name; 
     }
     
     public void setBodypoint(int bodypoint) {
@@ -29,7 +34,8 @@ public class player {
     }
 
     public void setSword(boolean sword) {
-        this.sword = sword;
+        this.sword = true;
+        setDamage(2);
     }
 
     public void setDamage(int damage) {
@@ -46,6 +52,10 @@ public class player {
 
     public int getDamage() {
         return damage;
+    }
+    
+    public void healPotion(){
+        setBodypoint(10); 
     }
 
 }
